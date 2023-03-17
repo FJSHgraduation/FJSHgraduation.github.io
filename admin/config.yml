@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow
+
+media_folder: source/images # Media files will be stored in the repo under images/uploads
+
+public_folder: /images
+
+site_url: https://fjshgraduation.github.io
+
+logo_url: https://raw.githubusercontent.com/FJSHgraduation/image/master/335968345_204831548896122_9112236360767566000_n.png
+
+locale: 'de'
+
+collections:
+  - name: 'Page' # Used in routes, e.g., /admin/collections/blog
+    label: 'Page' # Used in the UI
+    folder: 'source/_posts' # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Homepage', name: 'academia', widget: 'boolean', required: false, hint: 'This field determines whether this post is displayed on the homepage.'}
+      - {label: 'Body', name: 'body', widget: 'markdown'}
